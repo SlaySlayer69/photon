@@ -471,6 +471,10 @@ void main() {
 #define material_mask new_material_mask
 #endif
 
+    // Seasonal foliage tinting, only active with the Euphoria Patcher mod and a
+    // seasons mod installed
+    base_color.rgb = ep_apply_seasonal_tint(base_color.rgb, material_mask);
+
     gbuffer_data_0.x = pack_unorm_2x8(base_color.rg);
     gbuffer_data_0.y = pack_unorm_2x8(
         base_color.b,

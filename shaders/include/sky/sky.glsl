@@ -101,7 +101,8 @@ vec4 draw_moon(vec3 ray_dir) {
 
 #ifdef GALAXY
 vec3 draw_galaxy(vec3 ray_dir, out float galaxy_luminance) {
-    const vec3 galaxy_tint = vec3(0.75, 0.66, 1.0) * GALAXY_INTENSITY;
+    vec3 galaxy_tint
+        = vec3(0.75, 0.66, 1.0) * GALAXY_INTENSITY * ep_celestial_dimming();
 
     float galaxy_intensity = 0.05 + 1.0 * linear_step(-0.1, 0.25, -sun_dir.y);
 

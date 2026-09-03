@@ -269,3 +269,9 @@ void fix_hand_depth(inout float depth) {
     bool unused;
     fix_hand_depth(depth, unused);
 }
+
+// Euphoria Patches integration
+//
+// Included last because it builds on the helpers and constants defined above
+
+#include "/include/misc/euphoria_patches.glsl"
